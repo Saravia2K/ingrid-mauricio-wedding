@@ -10,3 +10,22 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model Guest {
+  id         Int     @id @default(autoincrement())
+  name       String
+  willAssist Boolean @map("will_assist")
+  fiance     Fiances
+  group      Group   @relation(fields: [groupId], references: [id])
+  groupId    Int
+}
+
+model Group {
+  id     Int     @id @default(autoincrement())
+  guests Guest[]
+}
+
+enum Fiances {
+  INGRID
+  MAURI
+}

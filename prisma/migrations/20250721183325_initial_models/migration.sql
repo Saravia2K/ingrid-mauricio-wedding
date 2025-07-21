@@ -1,0 +1,14 @@
+-- CreateTable
+CREATE TABLE "Guest" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "name" TEXT NOT NULL,
+    "will_assist" BOOLEAN NOT NULL,
+    "fiance" TEXT NOT NULL,
+    "groupId" INTEGER NOT NULL,
+    CONSTRAINT "Guest_groupId_fkey" FOREIGN KEY ("groupId") REFERENCES "Group" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "Group" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
+);
