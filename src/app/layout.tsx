@@ -1,4 +1,7 @@
 import { Metadata } from "next";
+import { CssBaseline } from "@mui/material";
+
+import "./global.scss";
 
 export const metadata: Metadata = {
   title: "Nuestra boda | Ingrid y Mauricio",
@@ -11,7 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <CssBaseline />
+        {children}
+      </body>
     </html>
   );
 }
