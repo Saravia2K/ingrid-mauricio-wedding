@@ -14,10 +14,12 @@ const playfairDisplay = Playfair_Display({
   weight: ["400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
   preload: true,
+  variable: "--font-fair-display",
 });
 
 const swagume = localFont({
   src: "../assets/fonts/Swagume.otf",
+  variable: "--font-swagume",
 });
 
 export default function RootLayout({
