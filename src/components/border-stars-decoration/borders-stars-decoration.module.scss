@@ -1,0 +1,21 @@
+.border-stars-decoration {
+  --x: -50%;
+
+  position: relative;
+
+  .star {
+    position: absolute;
+    top: 50%;
+    transform: translate(var(--x), -50%);
+
+    &.left {
+      left: 0;
+    }
+
+    &.right {
+      --x: 50%;
+
+      right: 0;
+    }
+  }
+}

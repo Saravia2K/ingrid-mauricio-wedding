@@ -2,6 +2,7 @@
 
 .logo {
   --footer-font-size: 1.2rem;
+  --year-line-height-multiplier: 1.5;
 
   position: relative;
   width: 25%;
@@ -28,29 +29,20 @@
     font-family: "Playfair Display";
     font-size: var(--footer-font-size);
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding-bottom: 1.2rem;
+    margin-bottom: 1.2rem;
 
     .year {
       height: 100%;
-      display: flex;
       align-items: center;
-    }
-
-    .l-star {
-      transform: translateX(-50%);
-    }
-
-    .r-star {
-      transform: translateX(50%);
+      line-height: calc(
+        var(--footer-font-size) * var(--year-line-height-multiplier)
+      );
     }
   }
 
   @include bp.tablet {
     --footer-font-size: 1.5rem;
+    --year-line-height-multiplier: 2;
 
     width: 20%;
     height: 40vh;
