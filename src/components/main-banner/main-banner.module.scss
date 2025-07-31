@@ -1,0 +1,64 @@
+@use "@/app/breakpoints" as bp;
+
+.main-banner {
+  --banner-img-margin-top: -5rem;
+  --names-font-size: 4.5rem;
+  --names-line-height: 4.4rem;
+  --ampersand-margin-left: 1rem;
+  --paragraph-font-size: 0.9rem;
+  --paragraph-padding: 0 1rem;
+
+  .banner {
+    img {
+      --t: -5rem;
+
+      display: block;
+      position: relative;
+      width: 100%;
+      height: auto;
+      max-height: 100dvh;
+      object-fit: cover;
+      background-repeat: repeat;
+      margin-top: var(--banner-img-margin-top);
+    }
+  }
+
+  .names {
+    text-align: center;
+    font-family: "swagume";
+    font-size: var(--names-font-size);
+    color: var(--brown);
+    font-weight: 500;
+    line-height: var(--names-line-height);
+    margin-top: 2rem;
+    margin-bottom: 1.25rem;
+
+    .ampersand {
+      color: var(--dark-beige);
+      transform: scaleX(-1);
+      margin-left: var(--ampersand-margin-left);
+    }
+
+    span {
+      display: inline-block;
+    }
+  }
+
+  .paragraph {
+    text-align: center;
+    font-family: "Playfair Display";
+    font-style: italic;
+    margin: 0;
+    padding: var(--paragraph-padding);
+    font-size: var(--paragraph-font-size);
+  }
+
+  @include bp.tablet {
+    --banner-img-margin-top: 0;
+    --names-font-size: 7rem;
+    --names-line-height: 7rem;
+    --ampersand-margin-left: 2rem;
+    --paragraph-font-size: 1.55rem;
+    --paragraph-padding: 0 3.5rem;
+  }
+}
