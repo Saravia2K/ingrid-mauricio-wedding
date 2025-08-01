@@ -1,0 +1,42 @@
+.datetime {
+  display: grid;
+  grid-template-columns: 25% 1fr 25%;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0 1.5rem;
+  text-transform: uppercase;
+  font-family: "Playfair Display";
+  color: var(--dark-beige);
+  text-align: center;
+  font-weight: bold;
+
+  .day,
+  .time {
+    border-top: 1px solid var(--dark-beige);
+    border-bottom: 1px solid var(--dark-beige);
+    padding: 0.3rem 0;
+    height: fit-content;
+  }
+
+  .date-month {
+    border-left: 1px solid var(--dark-beige);
+    border-right: 1px solid var(--dark-beige);
+    padding: 0 1rem;
+
+    .date,
+    .month {
+      display: block;
+    }
+
+    .date {
+      color: var(--brown);
+      font-size: 5rem;
+      line-height: 1.5rem;
+      margin-bottom: 2.75rem;
+    }
+
+    .month {
+      line-height: 1rem;
+    }
+  }
+}
