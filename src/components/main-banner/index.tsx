@@ -1,10 +1,10 @@
 import Image from "next/image";
 
 import Logo from "./logo";
+import FloralArrangements from "@/components/common/floral-arrangements";
 
 import styles from "./main-banner.module.scss";
 import banner from "../../assets/images/photos/IMG_0040.jpg";
-import FloralArrangements from "../floral-arrangements";
 
 export default function MainBanner() {
   return (

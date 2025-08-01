@@ -1,5 +1,5 @@
 import Image from "next/image";
-import BorderStarsDecoration from "@/components/border-stars-decoration";
+import BorderStarsDecoration from "@/components/common/border-stars-decoration";
 
 import styles from "./logo.module.scss";
 import logoImg from "@/assets/images/logo.svg";
