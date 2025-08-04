@@ -1,9 +1,14 @@
+@use "@/app/breakpoints.scss" as bp;
+
 .datetime {
+  --datetime-horizontal-padding: 1.5rem;
+  --datetime-gap: 1.5rem;
+
   display: grid;
   grid-template-columns: 25% 1fr 25%;
   align-items: center;
-  gap: 1.5rem;
-  padding: 0 1.5rem;
+  gap: var(--datetime-gap);
+  padding: 0 var(--datetime-horizontal-padding);
   text-transform: uppercase;
   font-family: "Playfair Display";
   color: var(--dark-beige);
@@ -38,5 +43,10 @@
     .month {
       line-height: 1rem;
     }
+  }
+
+  @include bp.tablet {
+    --datetime-horizontal-padding: 3rem;
+    --datetime-gap: 4rem;
   }
 }

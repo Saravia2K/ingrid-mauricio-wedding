@@ -1,0 +1,35 @@
+@use "@/app/breakpoints.scss" as bp;
+
+.counter {
+  --mt: 2.3rem;
+  --text-post-countdown-font-size: 14px;
+
+  margin-top: var(--mt);
+
+  .flower {
+    z-index: 1000;
+    position: absolute;
+    bottom: -1.3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    height: 160%;
+  }
+
+  .text-post-countdown {
+    width: 87%;
+    background-color: var(--brown);
+    color: #fff;
+    font-size: var(--text-post-countdown-font-size);
+    font-family: "Playfair Display";
+    text-align: center;
+    margin: auto;
+    padding: 0.7rem 0.3rem;
+    border-radius: 13px;
+  }
+
+  @include bp.tablet {
+    --mt: 3.2rem;
+    --text-post-countdown-font-size: 1.3rem;
+  }
+}
