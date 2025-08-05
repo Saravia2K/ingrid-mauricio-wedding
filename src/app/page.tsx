@@ -1,5 +1,5 @@
-import MainBanner from "@/components/main-banner";
-import Date from "@/components/date";
+import MainBanner from "@/components/sections/main-banner";
+import Date from "@/components/sections/date";
 
 import styles from "./index.module.scss";
 

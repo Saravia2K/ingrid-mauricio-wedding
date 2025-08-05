@@ -4,7 +4,7 @@ import Logo from "./logo";
 import FloralArrangements from "@/components/common/floral-arrangements";
 
 import styles from "./main-banner.module.scss";
-import banner from "../../assets/images/photos/IMG_0040.jpg";
+import banner from "@/assets/images/photos/IMG_0040.jpg";
 
 export default function MainBanner() {
   return (
