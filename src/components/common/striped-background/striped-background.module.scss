@@ -4,6 +4,7 @@
   --lines-gap: 10px;
 
   position: relative;
+  z-index: -1;
 
   .line {
     border: 1px solid color-mix(in srgb, var(--beige), transparent 50%);

@@ -1,0 +1,136 @@
+@use "@/app/breakpoints.scss" as bp;
+
+.song-player {
+  width: 80%;
+  margin: auto;
+  margin-top: -60px;
+  z-index: 1;
+
+  @include bp.tablet {
+    margin-top: -75px;
+  }
+
+  .song-player-banner {
+    width: 100%;
+    height: 5rem;
+    padding: 0 1rem;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+    }
+
+    @include bp.tablet {
+      height: 9rem;
+    }
+  }
+
+  .song-footer {
+    position: relative;
+    background-color: #fff;
+    box-shadow: -1px 2px 4px 0px rgba($color: #000000, $alpha: 0.25);
+    border-radius: 15px;
+    padding: 0.7rem 1.5rem;
+    padding-left: 40%;
+
+    .song-controls-disk {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      left: 2rem;
+      top: 0;
+      transform: translateY(-40%);
+
+      .vinilo-disk {
+        background-color: #fff;
+        border-radius: 100%;
+        padding: 0.3rem;
+        transition: transform 0.3s ease-in-out;
+        animation-play-state: paused;
+
+        &.playing {
+          animation: rotation 3s infinite linear;
+          animation-play-state: running;
+        }
+      }
+
+      .song-controls {
+        font-size: 1rem;
+        color: var(--grey);
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 5px;
+      }
+
+      @include bp.tablet {
+        width: 25%;
+        left: 3rem;
+
+        .vinilo-disk {
+          width: 100%;
+          height: auto;
+        }
+
+        .song-controls {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .song-info {
+      font-family: "Playfair Display";
+      display: flex;
+      flex-direction: column;
+
+      .song-name {
+        font-weight: bold;
+
+        @include bp.tablet {
+          font-size: 1.4rem;
+        }
+      }
+
+      .song-author {
+        font-size: 0.8em;
+
+        @include bp.tablet {
+          font-size: 1.2rem;
+        }
+      }
+
+      .song-times {
+        font-size: 0.6rem;
+        display: flex;
+        justify-content: space-between;
+
+        @include bp.tablet {
+          font-size: 1rem;
+        }
+      }
+
+      .timeline {
+        height: 5px;
+        border-radius: 15px;
+        background-color: var(--moss-green);
+
+        @include bp.tablet {
+          height: 10px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
