@@ -7,6 +7,7 @@ import SongPlayer from "@/components/sections/song-player";
 import History from "@/components/sections/history";
 
 import styles from "./index.module.scss";
+import VideoPlayer from "@/components/sections/video-player";
 
 export default function Home() {
   const historyPath = path.join(process.cwd(), "/src/history.txt");
@@ -20,6 +21,7 @@ export default function Home() {
       <Date />
       <SongPlayer />
       <History history={history} />
+      <VideoPlayer />
     </div>
   );
 }
