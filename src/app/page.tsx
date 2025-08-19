@@ -5,9 +5,10 @@ import MainBanner from "@/components/sections/main-banner";
 import Date from "@/components/sections/date";
 import SongPlayer from "@/components/sections/song-player";
 import History from "@/components/sections/history";
+import VideoPlayer from "@/components/sections/video-player";
+import Gallery from "@/components/sections/gallery";
 
 import styles from "./index.module.scss";
-import VideoPlayer from "@/components/sections/video-player";
 
 export default function Home() {
   const historyPath = path.join(process.cwd(), "/src/history.txt");
@@ -22,6 +23,7 @@ export default function Home() {
       <SongPlayer />
       <History history={history} />
       <VideoPlayer />
+      <Gallery />
     </div>
   );
 }
