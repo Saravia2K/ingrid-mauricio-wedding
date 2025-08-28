@@ -1,10 +1,11 @@
 @use "@/app/breakpoints.scss" as bp;
 
 .song-player {
+  position: relative;
   width: 80%;
   margin: auto;
   margin-top: -60px;
-  z-index: 1;
+  z-index: 2;
 
   @include bp.tablet {
     margin-top: -75px;
