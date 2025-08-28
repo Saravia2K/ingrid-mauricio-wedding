@@ -8,6 +8,7 @@ import History from "@/components/sections/history";
 import VideoPlayer from "@/components/sections/video-player";
 import Gallery from "@/components/sections/gallery";
 import Details from "@/components/sections/details";
+import Reminder from "@/components/sections/Reminder";
 
 import styles from "./index.module.scss";
 
@@ -26,6 +27,7 @@ export default function Home() {
       <VideoPlayer />
       <Gallery />
       <Details />
+      <Reminder />
     </div>
   );
 }
