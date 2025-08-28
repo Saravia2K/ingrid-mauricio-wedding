@@ -7,6 +7,7 @@ import SongPlayer from "@/components/sections/song-player";
 import History from "@/components/sections/history";
 import VideoPlayer from "@/components/sections/video-player";
 import Gallery from "@/components/sections/gallery";
+import Details from "@/components/sections/details";
 
 import styles from "./index.module.scss";
 
@@ -24,6 +25,7 @@ export default function Home() {
       <History history={history} />
       <VideoPlayer />
       <Gallery />
+      <Details />
     </div>
   );
 }

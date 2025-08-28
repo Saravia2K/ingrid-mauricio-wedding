@@ -1,0 +1,50 @@
+@use "@/app/breakpoints.scss" as bp;
+
+.details {
+  .title {
+    --font-size: 2.5rem;
+
+    font-family: Swagume;
+    font-weight: normal;
+    font-size: var(--font-size);
+    color: var(--moss-green);
+    text-align: center;
+    line-height: var(--font-size);
+
+    width: 45%;
+    margin: auto;
+    padding: 3.2rem 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    @include bp.tablet {
+      --font-size: 4rem;
+      padding: 3.5rem 0;
+      width: 40%;
+    }
+
+    .alternative {
+      font-family: "Playfair Display";
+      font-style: italic;
+      color: var(--dark-beige);
+    }
+
+    .decoration-stars-container {
+      flex: 1;
+      display: flex;
+      justify-content: space-evenly;
+
+      img {
+        width: auto;
+        height: 1.3rem;
+
+        @include bp.tablet {
+          height: 1.8rem;
+        }
+      }
+    }
+  }
+}
