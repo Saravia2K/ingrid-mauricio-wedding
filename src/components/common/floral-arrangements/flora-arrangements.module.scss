@@ -4,11 +4,7 @@
   position: relative;
 
   .flower {
-    --flower-top: attr(data-m-y rem, 0);
-    --flower-x: attr(data-m-x rem, 0);
-
     position: absolute;
-    top: var(--flower-top);
     width: 40%;
     overflow: hidden;
     z-index: 1000;
@@ -16,20 +12,6 @@
     img {
       width: 100%;
       height: auto;
-    }
-  }
-
-  .l {
-    left: var(--flower-x);
-  }
-
-  .r {
-    right: var(--flower-x);
-  }
-
-  @include bp.tablet {
-    .flower {
-      --flower-top: attr(data-t-y rem, data-m-y);
     }
   }
 }
