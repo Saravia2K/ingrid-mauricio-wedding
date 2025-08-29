@@ -8,7 +8,7 @@ import History from "@/components/sections/history";
 import VideoPlayer from "@/components/sections/video-player";
 import Gallery from "@/components/sections/gallery";
 import Details from "@/components/sections/details";
-import Reminder from "@/components/sections/Reminder";
+import Reminder from "@/components/sections/reminder";
 
 import styles from "./index.module.scss";
 

@@ -1,34 +1,22 @@
 "use client";
 
-import Image from "next/image";
-import StripedBackground from "@/components/common/striped-background";
 import { Button } from "@mui/material";
+import InformationCard from "@/components/common/information-card";
 
 import styles from "./reminder.module.scss";
 import stamp from "@/assets/images/arrangements/papel-304x172.svg";
 import bell from "@/assets/images/arrangements/Icono_Campana.svg";
-import star from "@/assets/images/arrangements/Estrella_Verde_musgo.svg";
 
 export default function Reminder() {
   return (
     <section className={styles.reminder}>
-      <StripedBackground lines={10}>
-        <div
-          className={styles.stamp}
-          style={{ backgroundImage: `url(${stamp.src})` }}
-        >
-          <Image src={bell} alt="" className={styles.bell} />
-          <div className={styles.stars_container}>
-            <Image src={star} alt="" />
-            <Image src={star} alt="" />
-          </div>
-          <p className={styles.stamp_text}>
-            Un sueño que compartimos contigo. Guarda esta fecha y sé parte de
-            nuestra historia de amor.
-          </p>
-          <StablishReminderButton />
-        </div>
-      </StripedBackground>
+      <InformationCard stamp={stamp} icon={bell}>
+        <p>
+          Un sueño que compartimos contigo. Guarda esta fecha y sé parte de
+          nuestra historia de amor.
+        </p>
+        <StablishReminderButton />
+      </InformationCard>
     </section>
   );
 }
