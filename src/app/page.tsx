@@ -9,6 +9,7 @@ import VideoPlayer from "@/components/sections/video-player";
 import Gallery from "@/components/sections/gallery";
 import Details from "@/components/sections/details";
 import Reminder from "@/components/sections/reminder";
+import GiftsAdvice from "@/components/sections/gifts-advice";
 
 import styles from "./index.module.scss";
 
@@ -28,6 +29,7 @@ export default function Home() {
       <Gallery />
       <Details />
       <Reminder />
+      <GiftsAdvice />
     </div>
   );
 }
