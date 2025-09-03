@@ -1,0 +1,81 @@
+@use "@/app/breakpoints" as bp;
+
+.moss-green-banner {
+  position: relative;
+
+  .flower {
+    z-index: 3;
+    position: absolute;
+    bottom: -3rem;
+    left: 50%;
+    width: auto;
+    height: 250%;
+    transform: translateX(-50%) rotate(-136deg);
+  }
+
+  .content-container {
+    --y-padding: 1.75rem;
+    --x-padding: 3rem;
+    --decoration-star-width: 1.2rem;
+    --decoration-star-divider: 2.5;
+
+    position: relative;
+    background-color: var(--moss-green);
+    color: #fff;
+    padding: var(--y-padding) var(--x-padding);
+
+    .decoration-star {
+      --x-move: calc(var(--x-padding) / var(--decoration-star-divider));
+
+      position: absolute;
+      z-index: 10;
+      width: var(--decoration-star-width);
+      height: auto;
+
+      &.top {
+        top: 0;
+        transform: translateY(-50%);
+      }
+
+      &.bottom {
+        bottom: 0;
+        transform: translateY(50%);
+      }
+
+      &.left {
+        left: var(--x-move);
+      }
+
+      &.right {
+        right: var(--x-move);
+      }
+    }
+
+    @include bp.tablet {
+      --decoration-star-width: 1.5rem;
+      --decoration-star-divider: 1.3;
+    }
+
+    @include bp.xs {
+      --decoration-star-divider: 3.4;
+    }
+  }
+
+  .text-post-content {
+    --text-post-content-font-size: 14px;
+
+    width: 87%;
+    background-color: var(--brown);
+    color: #fff;
+    font-size: var(--text-post-content-font-size);
+    font-family: "Playfair Display";
+    text-align: center;
+    margin: auto;
+    padding: 0.7rem 0.3rem;
+    border-radius: 13px;
+
+    @include bp.tablet {
+      --text-post-content-font-size: 1.3rem;
+    }
+  }
+}

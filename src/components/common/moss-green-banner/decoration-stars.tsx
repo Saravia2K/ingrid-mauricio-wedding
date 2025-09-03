@@ -1,7 +1,7 @@
 import Image from "next/image";
 import clsx from "clsx";
 
-import styles from "./countdown.module.scss";
+import styles from "./moss-green-banner.module.scss";
 import star from "@/assets/images/arrangements/Estrella_Beige_Degradado.svg";
 
 export default function DecorationStars() {

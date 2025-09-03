@@ -6,30 +6,45 @@
 
   margin-top: var(--mt);
 
-  .flower {
-    z-index: 1000;
-    position: absolute;
-    bottom: -1.3rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: auto;
-    height: 160%;
-  }
+  .countdown {
+    --countdown-number-font-size: 2.1rem;
+    --countdown-label-font-size: 1.1rem;
+    --countdown-gap: 1.75rem;
 
-  .text-post-countdown {
-    width: 87%;
-    background-color: var(--brown);
+    position: relative;
+    background-color: var(--moss-green);
     color: #fff;
-    font-size: var(--text-post-countdown-font-size);
-    font-family: "Playfair Display";
-    text-align: center;
-    margin: auto;
-    padding: 0.7rem 0.3rem;
-    border-radius: 13px;
+    display: flex;
+    justify-content: center;
+    gap: var(--countdown-gap);
+
+    .item {
+      width: fit-content;
+      font-family: "Playfair Display";
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .number {
+        font-size: var(--countdown-number-font-size);
+      }
+
+      .label {
+        font-size: var(--countdown-label-font-size);
+        color: var(--beige);
+        font-weight: normal;
+        margin-top: -0.4rem;
+      }
+    }
+
+    @include bp.tablet {
+      --countdown-number-font-size: 3.2rem;
+      --countdown-label-font-size: 1.7rem;
+      --countdown-gap: 2.5rem;
+    }
   }
 
   @include bp.tablet {
     --mt: 3.2rem;
-    --text-post-countdown-font-size: 1.3rem;
   }
 }
