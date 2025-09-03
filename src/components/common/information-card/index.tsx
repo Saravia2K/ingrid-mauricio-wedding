@@ -3,7 +3,6 @@ import Image, { type StaticImageData } from "next/image";
 import StripedBackground from "../striped-background";
 
 import styles from "./information-card.module.scss";
-import bell from "@/assets/images/arrangements/Icono_Campana.svg";
 import star from "@/assets/images/arrangements/Estrella_Verde_musgo.svg";
 
 export default function InformationCard({
@@ -21,12 +20,14 @@ export default function InformationCard({
           backgroundImage: `url(${stamp.src})`,
         }}
       >
-        <Image src={icon} alt="" className={styles.icon} />
-        <div className={styles.stars_container}>
-          <Image src={star} alt="" />
-          <Image src={star} alt="" />
+        <div className={styles["stamp-body"]}>
+          <Image src={icon} alt="" className={styles.icon} />
+          <div className={styles.stars_container}>
+            <Image src={star} alt="" />
+            <Image src={star} alt="" />
+          </div>
+          {children}
         </div>
-        {children}
       </div>
     </StripedBackground>
   );
