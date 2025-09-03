@@ -1,0 +1,85 @@
+@use "@/app/breakpoints.scss" as bp;
+
+.children-advice {
+  --border: 2px solid color-mix(in srgb, var(--beige), transparent 25%);
+
+  position: relative;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  border-top: var(--border);
+  border-bottom: var(--border);
+  padding: 1.2rem 5.5rem;
+
+  @include bp.xs {
+    padding: 1.2rem 4rem;
+  }
+
+  @include bp.tablet {
+    padding: 1.3rem 15rem;
+  }
+
+  .green-stars {
+    width: 1.3rem;
+    height: auto;
+  }
+
+  .important {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -51%);
+
+    background-color: #fff;
+
+    font-size: 3rem;
+    font-family: Swagume;
+    color: var(--moss-green);
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .flowers-container {
+    position: absolute;
+    width: 110%;
+    height: 100%;
+    top: 0;
+    left: -5%;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+
+    img {
+      height: 100%;
+      width: auto;
+      opacity: 0.5;
+    }
+
+    @include bp.xs {
+      width: 120%;
+      left: -10%;
+    }
+  }
+
+  .advice {
+    font-family: "Playfair Display";
+    font-style: italic;
+    font-weight: 500;
+    color: var(--moss-green);
+    text-align: center;
+
+    @include bp.tablet {
+      font-size: 1.2rem;
+    }
+  }
+
+  .bottom-stars {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 57%);
+    display: flex;
+    justify-content: space-between;
+  }
+}

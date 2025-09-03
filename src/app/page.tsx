@@ -10,6 +10,7 @@ import Gallery from "@/components/sections/gallery";
 import Details from "@/components/sections/details";
 import Reminder from "@/components/sections/reminder";
 import GiftsAdvice from "@/components/sections/gifts-advice";
+import ChildrenAdvice from "@/components/sections/children-advice";
 
 import styles from "./index.module.scss";
 
@@ -30,6 +31,7 @@ export default function Home() {
       <Details />
       <Reminder />
       <GiftsAdvice />
+      <ChildrenAdvice />
     </div>
   );
 }
