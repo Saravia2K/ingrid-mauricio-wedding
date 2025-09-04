@@ -19,10 +19,12 @@ export default function MossGreenBanner(props: MossGreenBannerProps) {
         {children}
       </div>
       {secondaryText && (
-        <StripedBackground lines={11} invisibleLines={!secondaryText.striped}>
-          <div className={styles["text-post-content"]}>
-            {secondaryText.text}
-          </div>
+        <StripedBackground lines={secondaryText.lines || 11}>
+          {secondaryText.text && (
+            <div className={styles["text-post-content"]}>
+              {secondaryText.text}
+            </div>
+          )}
         </StripedBackground>
       )}
     </div>
@@ -32,7 +34,7 @@ export default function MossGreenBanner(props: MossGreenBannerProps) {
 type MossGreenBannerProps = PropsWithChildren<{
   flowerBgStriped?: boolean;
   secondaryText?: {
-    text: string;
-    striped?: boolean;
+    text?: string;
+    lines?: number;
   };
 }>;

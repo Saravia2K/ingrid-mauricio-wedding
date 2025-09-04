@@ -11,6 +11,7 @@ import Details from "@/components/sections/details";
 import Reminder from "@/components/sections/reminder";
 import GiftsAdvice from "@/components/sections/gifts-advice";
 import ChildrenAdvice from "@/components/sections/children-advice";
+import Confirmation from "@/components/sections/confirmation";
 
 import styles from "./index.module.scss";
 
@@ -32,6 +33,7 @@ export default function Home() {
       <Reminder />
       <GiftsAdvice />
       <ChildrenAdvice />
+      <Confirmation />
     </div>
   );
 }

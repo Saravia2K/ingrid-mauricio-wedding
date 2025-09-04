@@ -1,0 +1,64 @@
+@use "@/app/breakpoints.scss" as bp;
+
+.confirmation {
+  margin-top: 3px;
+  border-bottom: 1.5rem solid var(--moss-green);
+
+  .name,
+  .special-spot-msg {
+    font-weight: lighter;
+    text-align: center;
+    margin: 0;
+  }
+
+  .name {
+    font-family: swagume;
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+
+  .special-spot-msg {
+    font-family: "Playfair Display";
+    font-style: italic;
+    color: var(--beige);
+    margin-top: -10px;
+  }
+
+  .confirmation-container {
+    padding: 2rem 3rem;
+
+    .confirmation-msg {
+      font-family: "Playfair Display";
+      font-style: italic;
+      font-weight: 500;
+      text-align: center;
+      color: var(--dark-beige);
+
+      margin: 0;
+      margin-bottom: 1rem;
+
+      .companions {
+        color: var(--moss-green);
+      }
+
+      @include bp.tablet {
+        font-size: 1.3rem;
+      }
+    }
+
+    @include bp.xs {
+      padding: 2rem 2rem;
+    }
+
+    @include bp.tablet {
+      padding: 2rem 11rem;
+    }
+
+    .confirmation-btns {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+  }
+}

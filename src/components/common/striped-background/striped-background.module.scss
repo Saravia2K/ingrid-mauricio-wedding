@@ -9,7 +9,7 @@
   .line {
     border: 1px solid color-mix(in srgb, var(--beige), transparent 50%);
 
-    &:not(:last-child) {
+    &:not(:nth-last-child(2)) {
       margin-bottom: var(--lines-gap);
     }
   }

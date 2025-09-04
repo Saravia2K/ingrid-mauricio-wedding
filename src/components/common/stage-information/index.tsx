@@ -1,11 +1,15 @@
+"use client";
+
 import { type StaticImageData } from "next/image";
-import { Button } from "@mui/material";
 import FloralArrangements from "../floral-arrangements";
+import WhiteButton from "../white-button";
 
 import styles from "./stage-information.module.scss";
 
 export default function StageInformation(props: StageInformationProps) {
   const { title, backgroundImage, hour, placeName, address, mapsLinks } = props;
+
+  const openMapLink = (href: string) => window.open(href, "_blank");
 
   return (
     <div className={styles["stage-information"]}>
@@ -38,31 +42,20 @@ export default function StageInformation(props: StageInformationProps) {
             {address.secondLine && <span>{address.secondLine}</span>}
           </div>
           <div className={styles["maps-btns"]}>
-            <MapButton text="Google Maps" href={mapsLinks.googleMaps} />
-            <MapButton text="Waze" href={mapsLinks.waze} />
+            <WhiteButton
+              text="Google Maps"
+              onClick={() => openMapLink(mapsLinks.googleMaps)}
+            />
+            <WhiteButton
+              text="Waze"
+              onClick={() => openMapLink(mapsLinks.waze)}
+            />
           </div>
         </FloralArrangements>
       </div>
     </div>
   );
 }
-
-const MapButton = ({ text, href }: MapButtonProps) => (
-  <Button
-    href={href}
-    target="_blank"
-    variant="contained"
-    sx={{
-      textTransform: "none",
-      backgroundColor: "#fff",
-      color: "var(--brown)",
-      fontFamily: "Playfair Display",
-      borderRadius: "2px",
-    }}
-  >
-    {text}
-  </Button>
-);
 
 type StageInformationProps = {
   title: string;
@@ -77,9 +70,4 @@ type StageInformationProps = {
     googleMaps: string;
     waze: string;
   };
-};
-
-type MapButtonProps = {
-  text: string;
-  href: string;
 };

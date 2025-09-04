@@ -68,7 +68,6 @@ export default function Counter() {
         flowerBgStriped
         secondaryText={{
           text: "Cada segundos nos acerca más a nuestro para siempre",
-          striped: true,
         }}
       >
         <div className={styles.countdown}>
