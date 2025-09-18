@@ -17,7 +17,7 @@ export default function ChildrenAdvice() {
     if (!div) return;
 
     setStarsContainerWidth(div.getBoundingClientRect().width);
-  }, [importantContainerRef.current]);
+  }, []);
 
   return (
     <section className={styles["children-advice"]}>
