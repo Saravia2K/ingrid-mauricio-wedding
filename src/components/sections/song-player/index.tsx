@@ -28,7 +28,7 @@ export default function SongPlayer() {
 
           setSongPlaying(true);
           clearInterval(interval);
-        } catch (error) {
+        } catch (_) {
           console.log("Retrying to play the song...");
         }
       }
@@ -37,7 +37,7 @@ export default function SongPlayer() {
     return () => {
       clearInterval(interval);
     };
-  }, [audioRef.current]);
+  }, []);
 
   //#region Handlers
   const handlePauseClick = () => {
