@@ -1,0 +1,97 @@
+@use "@/app/breakpoints.scss" as bp;
+
+.agenda {
+  position: relative;
+  margin-top: 4rem;
+
+  .cover {
+    position: relative;
+    height: 63vh;
+    background-size: cover;
+    background-position-y: -2rem;
+
+    @include bp.tablet {
+      height: 80vh;
+      background-position-y: -20rem;
+    }
+
+    .agenda-text {
+      z-index: 3;
+      padding: 1rem 2rem;
+      background-color: var(--moss-green);
+
+      font-family: swagume;
+      font-size: 2.5rem;
+      font-weight: lighter;
+      color: #fff;
+
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, 50%);
+
+      @include bp.tablet {
+        font-size: 3.5rem;
+      }
+
+      .star {
+        position: absolute;
+        top: 50%;
+
+        &.left {
+          left: 0;
+          transform: translate(-50%, -50%);
+        }
+
+        &.right {
+          right: 0;
+          transform: translate(50%, -50%);
+        }
+      }
+    }
+  }
+
+  .timeline {
+    --flower-column-size: 30%;
+
+    position: relative;
+    padding-top: 5rem;
+
+    display: grid;
+    grid-template-columns: var(--flower-column-size) 1fr;
+
+    .agenda-container {
+      padding-right: 1rem;
+
+      .agenda-img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+
+    .flowers {
+      position: relative;
+      height: 100%;
+      width: auto;
+    }
+
+    @include bp.xs {
+      --flower-column-size: 25%;
+
+      .flowers {
+        left: -1rem;
+      }
+    }
+
+    @include bp.tablet {
+      .agenda-container {
+        padding-left: 1.75rem;
+
+        .agenda-img {
+          width: 60%;
+        }
+      }
+    }
+  }
+}

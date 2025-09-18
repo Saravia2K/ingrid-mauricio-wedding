@@ -9,6 +9,7 @@ import VideoPlayer from "@/components/sections/video-player";
 import Gallery from "@/components/sections/gallery";
 import Details from "@/components/sections/details";
 import Reminder from "@/components/sections/reminder";
+import Agenda from "@/components/sections/agenda";
 import GiftsAdvice from "@/components/sections/gifts-advice";
 import ChildrenAdvice from "@/components/sections/children-advice";
 import Confirmation from "@/components/sections/confirmation";
@@ -31,6 +32,7 @@ export default function Home() {
       <Gallery />
       <Details />
       <Reminder />
+      <Agenda />
       <GiftsAdvice />
       <ChildrenAdvice />
       <Confirmation />
