@@ -47,7 +47,8 @@ export default function History({ history }: HistoryProps) {
           style={{ backgroundImage: `url(${papel.src})` }}
         >
           <span>
-            "Porque el mejor destino es el que elegimos caminar de la mano"
+            &quot;Porque el mejor destino es el que elegimos caminar de la
+            mano&quot;
           </span>
         </div>
       </div>
