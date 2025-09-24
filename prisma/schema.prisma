@@ -21,6 +21,12 @@ model Guest {
   confirmed Boolean?
   leader    Boolean? @default(false)
   cellphone Int      @db.Integer
+  fiance    Fiance
 
   @@unique([groupId, leader])
+}
+
+enum Fiance {
+  INGRID
+  MAURICIO
 }
