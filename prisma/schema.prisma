@@ -16,7 +16,7 @@ datasource db {
 
 model Guest {
   id        Int      @id @default(autoincrement())
-  name      String   @db.VarChar(255)
+  name      String   @unique @db.VarChar(255)
   groupId   Int
   confirmed Boolean?
   leader    Boolean? @default(false)
