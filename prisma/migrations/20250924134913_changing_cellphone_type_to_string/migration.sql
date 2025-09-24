@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Guest" ALTER COLUMN "cellphone" SET DATA TYPE VARCHAR(15);

@@ -20,7 +20,7 @@ model Guest {
   groupId   Int
   confirmed Boolean?
   leader    Boolean? @default(false)
-  cellphone Int      @db.Integer
+  cellphone String   @db.VarChar(15)
   fiance    Fiance
 
   @@unique([groupId, leader])
