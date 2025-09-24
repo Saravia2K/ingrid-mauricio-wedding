@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run start:db && npm run start:dev",
     "build": "next build",
     "start": "next start",
+    "start:dev": "next dev",
+    "start:db": "docker compose up --force-recreate -d",
     "lint": "next lint"
   },
   "dependencies": {
