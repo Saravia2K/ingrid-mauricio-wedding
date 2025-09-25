@@ -1,7 +1,7 @@
 import BorderStarsDecoration from "@/components/common/border-stars-decoration";
 import moment from "moment-timezone";
 
-import DATA from "@/assets/json/data";
+import DATA from "@/assets/json/data.json";
 import "moment/locale/es";
 
 import styles from "./datetime.module.scss";

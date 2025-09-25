@@ -4,7 +4,7 @@ import Counter from "./counter";
 
 export const dynamic = "force-static";
 
-import DATA from "@/assets/json/data";
+import DATA from "@/assets/json/data.json";
 
 const { date, hour } = DATA;
 export default function Date() {

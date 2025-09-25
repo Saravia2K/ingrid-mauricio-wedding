@@ -14,12 +14,18 @@ import GiftsAdvice from "@/components/sections/gifts-advice";
 import ChildrenAdvice from "@/components/sections/children-advice";
 import Confirmation from "@/components/sections/confirmation";
 
-import DATA from "@/assets/json/data";
+import DATA from "@/assets/json/data.json";
 
 import styles from "./index.module.scss";
 
-const { history, song, videoUrl } = DATA;
+const { song, videoUrl } = DATA;
 export default function Home() {
+  const historyPath = path.join(process.cwd(), "/src/history.txt");
+  const history = fs.readFileSync(historyPath, {
+    encoding: "utf-8",
+    flag: "r",
+  });
+
   return (
     <div className={styles.main}>
       <MainBanner />

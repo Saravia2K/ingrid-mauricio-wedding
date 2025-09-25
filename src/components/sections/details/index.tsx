@@ -7,7 +7,7 @@ import styles from "./details.module.scss";
 import mossGreenStar from "@/assets/images/arrangements/Estrella_Verde_musgo.svg";
 import haciendaImg from "@/assets/images/hacienda.jpg";
 
-import DATA from "@/assets/json/data";
+import DATA from "@/assets/json/data.json";
 
 const { date, hour, address } = DATA;
 export default function Details() {
