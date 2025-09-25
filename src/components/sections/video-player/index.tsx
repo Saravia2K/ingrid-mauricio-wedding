@@ -6,8 +6,8 @@ import { FaPlay } from "react-icons/fa";
 import styles from "./video-player.module.scss";
 import overlayImg from "@/assets/images/photos/9X1C6064.jpg";
 
-const VIDEO_SRC = "assets/videos/proposal.mp4";
-export default function VideoPlayer() {
+type VideoPlayerProps = { videoSrc: string };
+export default function VideoPlayer({ videoSrc }: VideoPlayerProps) {
   const [firstPlay, setFirstPlay] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -30,7 +30,7 @@ export default function VideoPlayer() {
         </div>
       )}
       <video controls={!firstPlay} ref={videoRef}>
-        <source src={VIDEO_SRC} type="video/mp4" />
+        <source src={videoSrc} type="video/mp4" />
         Tu navegador no soporta videos
       </video>
     </div>

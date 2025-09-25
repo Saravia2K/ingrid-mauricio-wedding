@@ -10,8 +10,12 @@ import styles from "./song-player.module.scss";
 import banner from "@/assets/images/Pareja.svg";
 import viniloDisk from "@/assets/images/Disco_Vinilo.svg";
 
-const AUDIO_SRC = "/assets/audios/all-my-love--coldplay.mp3";
-export default function SongPlayer() {
+type SongPlayerProps = {
+  songSrc: string;
+  name: string;
+  author: string;
+};
+export default function SongPlayer({ songSrc, name, author }: SongPlayerProps) {
   const [songPlaying, setSongPlaying] = useState(false);
   const [songCurrentTime, setSongCurrentTime] = useState(0);
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -92,7 +96,7 @@ export default function SongPlayer() {
   return (
     <div className={styles["song-player"]}>
       <audio
-        src={AUDIO_SRC}
+        src={songSrc}
         ref={audioRef}
         onTimeUpdate={() =>
           setSongCurrentTime(audioRef.current?.currentTime || 0)
@@ -122,8 +126,8 @@ export default function SongPlayer() {
           </div>
         </div>
         <div className={styles["song-info"]}>
-          <span className={styles["song-name"]}>Me cambiaste la vida</span>
-          <span className={styles["song-author"]}>Río Roma</span>
+          <span className={styles["song-name"]}>{name}</span>
+          <span className={styles["song-author"]}>{author}</span>
           <div className={styles["song-times"]}>
             <span>{formatSeconds(songCurrentTime)}</span>
             <span>{formatSeconds(audioRef.current?.duration || 0)}</span>

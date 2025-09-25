@@ -7,9 +7,9 @@ import MossGreenBanner from "@/components/common/moss-green-banner";
 import styles from "./counter.module.scss";
 
 const LABELS = ["Días", "Horas", "Minutos", "Segundos"];
-export default function Counter() {
+export default function Counter({ date }: CounterProps) {
   const [counterData, setCounterData] = useState<CounterData>();
-  const targetDate = useRef(moment(new Date("2025-09-23 10:00")));
+  const targetDate = useRef(moment(new Date(date)));
   const counterInterval = useRef<NodeJS.Timeout>(undefined);
 
   useEffect(() => {
@@ -91,4 +91,8 @@ type CounterData = {
   hours: number;
   minutes: number;
   seconds: number;
+};
+
+type CounterProps = {
+  date: string;
 };

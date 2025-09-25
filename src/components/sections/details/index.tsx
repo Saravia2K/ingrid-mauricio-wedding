@@ -1,4 +1,5 @@
 import Image from "next/image";
+import moment from "moment";
 import StageInformation from "@/components/common/stage-information";
 import FloralArrangements from "@/components/common/floral-arrangements";
 
@@ -6,7 +7,11 @@ import styles from "./details.module.scss";
 import mossGreenStar from "@/assets/images/arrangements/Estrella_Verde_musgo.svg";
 import haciendaImg from "@/assets/images/hacienda.jpg";
 
+import DATA from "@/assets/json/data";
+
+const { date, hour, address } = DATA;
 export default function Details() {
+  const m = moment(`${date}T${hour}`);
   return (
     <section className={styles.details}>
       <FloralArrangements
@@ -34,11 +39,11 @@ export default function Details() {
         <StageInformation
           title="Ceremonia y recepción"
           backgroundImage={haciendaImg}
-          hour="10:00 AM"
+          hour={m.format("hh:mm a")}
           placeName="Hacienda San Antonio"
           address={{
-            firstLine: "Calle al Agua Caliente, cantón Lomas de Alarcón",
-            secondLine: "A 2.5 km de Atiquizaya",
+            firstLine: address.firstLine,
+            secondLine: address.secondLine,
           }}
           mapsLinks={{
             googleMaps: "https://maps.app.goo.gl/wB4FFwsZvFm7pjzx8?g_st=ipc",
