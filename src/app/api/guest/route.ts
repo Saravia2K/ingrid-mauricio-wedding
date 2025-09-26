@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import * as z from "zod";
 import validator from "validator";
+import slugify from "slugify";
 import prisma from "@/lib/prisma";
 
 const GuestSchema = z.object({
@@ -15,6 +16,7 @@ const GuestSchema = z.object({
     .default(false),
   cellphone: z.string().refine(validator.isMobilePhone),
   fiance: z.union([z.literal("INGRID"), z.literal("MAURICIO")]),
+  relation: z.string("La relación es obligatoria"),
 });
 
 export const POST = async (req: NextRequest) => {
@@ -33,7 +35,12 @@ export const POST = async (req: NextRequest) => {
 
     return NextResponse.json(
       await prisma.guest.create({
-        data: result.data,
+        data: {
+          ...result.data,
+          slug: slugify(result.data.name, {
+            lower: true,
+          }),
+        },
       })
     );
   } catch (e: any) {
