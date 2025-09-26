@@ -19,12 +19,12 @@ export default function Details() {
           {
             position: "l",
             mobile: { y: 0, x: -3.5 },
-            tablet: { y: 0, size: 35 },
+            tablet: { y: 0, x: -4.5, size: 35 },
           },
           {
             position: "r",
             mobile: { y: 0, x: -3.5 },
-            tablet: { y: 0, size: 35 },
+            tablet: { y: 0, x: -4.5, size: 35 },
           },
         ]}
       >

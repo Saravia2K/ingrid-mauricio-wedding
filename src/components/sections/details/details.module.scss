@@ -20,6 +20,10 @@
     align-items: center;
     justify-content: space-between;
 
+    @include bp.xs {
+      width: 55%;
+    }
+
     @include bp.tablet {
       --font-size: 4rem;
       padding: 3.5rem 0;
