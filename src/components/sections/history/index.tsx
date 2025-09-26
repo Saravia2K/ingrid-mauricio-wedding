@@ -20,7 +20,7 @@ export default function History({ history }: HistoryProps) {
         <span>
           Nuestra <span className={styles["italic-dark-beige"]}>historia,</span>
         </span>
-        <Image src={flowers} alt="" className={styles.flowers} />
+        <Image priority src={flowers} alt="" className={styles.flowers} />
       </div>
       <div className={clsx(styles.title, styles["second-line"])}>
         {Array.from({ length: isTablet ? 2 : 1 }, (_, i) => (
