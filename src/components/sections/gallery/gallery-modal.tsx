@@ -16,7 +16,7 @@ export default function GalleryModal({
 
   return (
     <Modal open={open} onClose={onClose}>
-      <React.Fragment>
+      <div>
         <CloseBtn onClick={onClose} />
         <Box
           component={Paper}
@@ -50,18 +50,14 @@ export default function GalleryModal({
             open={selectedImage != undefined}
             onClose={() => setSelectedImage(undefined)}
           >
-            <React.Fragment>
-              {selectedImage && (
-                <Image
-                  src={selectedImage}
-                  alt=""
-                  className={styles["selected-img"]}
-                />
-              )}
-            </React.Fragment>
+            <Image
+              src={selectedImage || ""}
+              alt=""
+              className={styles["selected-img"]}
+            />
           </Modal>
         </Box>
-      </React.Fragment>
+      </div>
     </Modal>
   );
 }
