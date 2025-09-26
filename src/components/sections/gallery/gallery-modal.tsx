@@ -15,7 +15,7 @@ export default function GalleryModal({
   const [selectedImage, setSelectedImage] = useState<StaticImageData>();
 
   return (
-    <Modal open={open} onClose={onClose}>
+    <Modal keepMounted open={open} onClose={onClose}>
       <div>
         <CloseBtn onClick={onClose} />
         <Box
@@ -43,6 +43,7 @@ export default function GalleryModal({
                 alt=""
                 className={styles["gallery-img"]}
                 onClick={() => setSelectedImage(p)}
+                priority
               />
             ))}
           </Box>

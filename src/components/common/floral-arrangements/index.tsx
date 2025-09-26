@@ -46,7 +46,7 @@ export default function FloralArrangements(props: FloralArrangementsProps) {
               },
             }}
           >
-            <Image src={flower} alt="Flower" />
+            <Image src={flower} alt="Flower" priority />
           </Box>
         );
       })}
