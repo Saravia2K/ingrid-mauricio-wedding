@@ -45,9 +45,9 @@ const history = fs.readFileSync(historyPath, {
   encoding: "utf-8",
   flag: "r",
 });
-export default async function InvitationPage({ params }: InvitationPageProps) {
-  const goToSinInvitar = () => redirect("/sin-invitar");
 
+const goToSinInvitar = () => redirect("/sin-invitar");
+export default async function InvitationPage({ params }: InvitationPageProps) {
   const { "guest-slug": slug } = await params;
   const guest = await prisma.guest.findFirst({
     where: {

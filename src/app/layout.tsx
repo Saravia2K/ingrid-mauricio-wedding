@@ -3,6 +3,7 @@ import { CssBaseline } from "@mui/material";
 import { Playfair_Display } from "next/font/google";
 import localFont from "next/font/local";
 import clsx from "clsx";
+import SonnerProvider from "@/components/providers/sonner";
 
 import "./global.scss";
 
@@ -33,8 +34,10 @@ export default function RootLayout({
       className={clsx(playfairDisplay.className, swagume.className)}
     >
       <body>
-        <CssBaseline />
-        {children}
+        <SonnerProvider>
+          <CssBaseline />
+          {children}
+        </SonnerProvider>
       </body>
     </html>
   );
