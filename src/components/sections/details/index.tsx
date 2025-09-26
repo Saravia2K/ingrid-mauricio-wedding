@@ -9,7 +9,7 @@ import haciendaImg from "@/assets/images/hacienda.jpg";
 
 import DATA from "@/assets/json/data.json";
 
-const { date, hour, address } = DATA;
+const { date, hour, address, maps } = DATA;
 export default function Details() {
   const m = moment(`${date}T${hour}`);
   return (
@@ -46,8 +46,8 @@ export default function Details() {
             secondLine: address.secondLine,
           }}
           mapsLinks={{
-            googleMaps: "https://maps.app.goo.gl/wB4FFwsZvFm7pjzx8?g_st=ipc",
-            waze: "https://ul.waze.com/ul?place=ChIJdUVYLIqXYo8R0XVGQRaRBBo&ll=13.99204900%2C-89.77570130&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location",
+            googleMaps: maps.google,
+            waze: maps.waze,
           }}
         />
       </FloralArrangements>
