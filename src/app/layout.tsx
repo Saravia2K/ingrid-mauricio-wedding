@@ -6,9 +6,18 @@ import clsx from "clsx";
 import SonnerProvider from "@/components/providers/sonner";
 
 import "./global.scss";
+import banner from "@/assets/images/photos/IMG_0040.jpg";
 
 export const metadata: Metadata = {
   title: "Nuestra boda | Ingrid y Mauricio",
+  description:
+    "Con el corazón lleno de gratitud por todo lo compartido y el amor que nos une, queremos celebrar este momento especial contigo. Tu presencia lo hará aún más feliz.",
+  openGraph: {
+    title: "Nuestra boda | Ingrid y Mauricio",
+    images: [banner.src],
+    description:
+      "Con el corazón lleno de gratitud por todo lo compartido y el amor que nos une, queremos celebrar este momento especial contigo. Tu presencia lo hará aún más feliz.",
+  },
 };
 
 const playfairDisplay = Playfair_Display({
