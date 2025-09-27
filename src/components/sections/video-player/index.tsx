@@ -29,7 +29,7 @@ export default function VideoPlayer({ videoSrc }: VideoPlayerProps) {
           <FaPlay className={styles["play-icon"]} />
         </div>
       )}
-      <video controls={!firstPlay} ref={videoRef}>
+      <video controls={!firstPlay} ref={videoRef} muted>
         <source src={videoSrc} type="video/mp4" />
         Tu navegador no soporta videos
       </video>
