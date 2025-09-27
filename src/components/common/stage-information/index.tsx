@@ -17,7 +17,7 @@ export default function StageInformation(props: StageInformationProps) {
         className={styles.banner}
         style={{ backgroundImage: `url(${backgroundImage.src})` }}
       >
-        {title}
+        <span>{title}</span>
       </div>
       <div className={styles["information-container"]}>
         <FloralArrangements
