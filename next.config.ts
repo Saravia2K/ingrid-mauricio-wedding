@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
       permanent: false,
     },
   ],
+  images: {
+    minimumCacheTTL: 2678400,
+  },
 };
 
 export default nextConfig;
