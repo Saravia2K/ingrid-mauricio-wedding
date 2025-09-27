@@ -19,19 +19,20 @@ export default function SongPlayer({ songSrc, name, author }: SongPlayerProps) {
   const [songPlaying, setSongPlaying] = useState(false);
   const [songCurrentTime, setSongCurrentTime] = useState(0);
   const audioRef = useRef<HTMLAudioElement>(null);
+  const intervalRef = useRef<NodeJS.Timeout>(null);
 
   useEffect(() => {
     if (!audioRef.current) return;
     const audio = audioRef.current;
 
-    const interval = setInterval(async () => {
+    intervalRef.current = setInterval(async () => {
       if (audio.paused) {
         try {
           audio.volume = 0.5;
           await audio.play();
 
           setSongPlaying(true);
-          clearInterval(interval);
+          clearAutoplayInterval();
         } catch (_) {
           console.log("Retrying to play the song...");
         }
@@ -39,7 +40,7 @@ export default function SongPlayer({ songSrc, name, author }: SongPlayerProps) {
     }, 1000);
 
     return () => {
-      clearInterval(interval);
+      clearAutoplayInterval();
     };
   }, []);
 
@@ -52,18 +53,23 @@ export default function SongPlayer({ songSrc, name, author }: SongPlayerProps) {
   const handlePlayClick = () => {
     audioRef.current?.play();
     setSongPlaying(true);
+    clearAutoplayInterval();
   };
 
   const handleBackwardClick = () => {
     if (!audioRef.current) return;
 
     audioRef.current.currentTime -= 10;
+
+    clearAutoplayInterval();
   };
 
   const handleForwardClick = () => {
     if (!audioRef.current) return;
 
     audioRef.current.currentTime += 10;
+
+    clearAutoplayInterval();
   };
 
   const handleSongEnded = async () => {
@@ -77,6 +83,12 @@ export default function SongPlayer({ songSrc, name, author }: SongPlayerProps) {
   //#endregion
 
   //#region Common functions
+  const clearAutoplayInterval = () => {
+    if (intervalRef.current != null) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  };
   const formatSeconds = (seconds: number) => {
     const minutes = Math.floor(seconds / 60);
     const _seconds = Math.floor(seconds % 60);
