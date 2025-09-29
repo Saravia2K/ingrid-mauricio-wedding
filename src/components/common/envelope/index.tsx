@@ -14,7 +14,7 @@ export default function Envelope({ children, name }: EnvelopeProps) {
   if (state == "clicked")
     setTimeout(() => {
       setState("opened");
-    }, 500);
+    }, 100);
 
   if (state == "opened") return children;
   return (
