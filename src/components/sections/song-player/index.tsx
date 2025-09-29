@@ -8,7 +8,7 @@ import { FaPlay, FaBackward, FaForward, FaPause } from "react-icons/fa";
 
 import styles from "./song-player.module.scss";
 import banner from "@/assets/images/Pareja.svg";
-import viniloDisk from "@/assets/images/Disco_Vinilo.svg";
+import viniloDisk from "@/assets/images/Disco_Vinilo.webp";
 
 type SongPlayerProps = {
   songSrc: string;
@@ -121,7 +121,6 @@ export default function SongPlayer({ songSrc, name, author }: SongPlayerProps) {
       <div className={styles["song-footer"]}>
         <div className={styles["song-controls-disk"]}>
           <Image
-            priority
             src={viniloDisk}
             alt="Disco de vinilo"
             className={clsx(styles["vinilo-disk"], {
