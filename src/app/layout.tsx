@@ -5,8 +5,8 @@ import localFont from "next/font/local";
 import clsx from "clsx";
 import SonnerProvider from "@/components/providers/sonner";
 
-import "./global.scss";
 import "animate.css";
+import "./global.scss";
 import banner from "@/assets/images/photos/IMG_0040.jpg";
 
 export const metadata: Metadata = {
