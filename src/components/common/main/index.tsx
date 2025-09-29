@@ -10,6 +10,7 @@ export default function Main({ children, pb }: MainProps) {
       margin="auto"
       pb={pb ? "1rem" : 0}
       sx={{ overflowX: "hidden" }}
+      className="animate__animated animate__fadeIn"
     >
       {children}
     </Box>

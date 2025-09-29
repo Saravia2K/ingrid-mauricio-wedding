@@ -6,6 +6,7 @@ import clsx from "clsx";
 import SonnerProvider from "@/components/providers/sonner";
 
 import "./global.scss";
+import "animate.css";
 import banner from "@/assets/images/photos/IMG_0040.jpg";
 
 export const metadata: Metadata = {

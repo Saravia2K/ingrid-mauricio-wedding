@@ -3,6 +3,7 @@ import { ResolvingMetadata, type Metadata } from "next";
 import prisma from "@/lib/prisma";
 
 import InvitationPageContent from "./content";
+import Envelope from "@/components/common/envelope";
 
 //#region Metadata
 export async function generateMetadata(
@@ -60,7 +61,11 @@ export default async function InvitationPage({ params }: InvitationPageProps) {
     },
   });
 
-  return <InvitationPageContent guest={guest} companions={companions} />;
+  return (
+    <Envelope name={guest.name}>
+      <InvitationPageContent guest={guest} companions={companions} />
+    </Envelope>
+  );
 }
 
 type InvitationPageProps = {
