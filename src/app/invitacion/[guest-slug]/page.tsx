@@ -25,7 +25,7 @@ export async function generateMetadata(
 }
 //#endregion
 
-const goToSinInvitar = () => redirect("/sin-invitar");
+const goToIndex = () => redirect("/");
 export default async function InvitationPage({ params }: InvitationPageProps) {
   // Cargando invitación
   const { "guest-slug": slug } = await params;
@@ -36,7 +36,7 @@ export default async function InvitationPage({ params }: InvitationPageProps) {
   });
 
   // ¿No existe? No está invitado
-  if (!guest) return goToSinInvitar();
+  if (!guest) return goToIndex();
 
   // ¿Es acompañante? Entonces se redirige a la invitación
   // del verdadero invitado
@@ -48,7 +48,7 @@ export default async function InvitationPage({ params }: InvitationPageProps) {
       },
     });
 
-    if (!leader) return goToSinInvitar();
+    if (!leader) return goToIndex();
 
     return redirect(`/invitacion/${leader.slug}`);
   }

@@ -32,7 +32,7 @@ export default async function InvitationPageContent({
 }: InvitationPageProps) {
   return (
     <Main>
-      <MainBanner />
+      <MainBanner showDescription />
       <Date />
       <SongPlayer songSrc={song.url} name={song.name} author={song.author} />
       <History history={history} />

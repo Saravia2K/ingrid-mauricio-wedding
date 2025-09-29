@@ -6,7 +6,7 @@ import FloralArrangements from "@/components/common/floral-arrangements";
 import styles from "./main-banner.module.scss";
 import banner from "@/assets/images/photos/IMG_0040.jpg";
 
-export default function MainBanner() {
+export default function MainBanner({ showDescription }: MainBannerProps) {
   return (
     <div className={styles["main-banner"]}>
       <div className={styles.banner}>
@@ -24,12 +24,18 @@ export default function MainBanner() {
           <span className={styles.ampersand}>&</span>
           <span>Mauricio</span>
         </h1>
-        <p className={styles.paragraph}>
-          Con el corazón lleno de gratitud por todo lo compartido y el amor que
-          nos une, queremos celebrar este momento especial contigo. Tu presencia
-          lo hará aún más feliz.
-        </p>
+        {showDescription && (
+          <p className={styles.paragraph}>
+            Con el corazón lleno de gratitud por todo lo compartido y el amor
+            que nos une, queremos celebrar este momento especial contigo. Tu
+            presencia lo hará aún más feliz.
+          </p>
+        )}
       </FloralArrangements>
     </div>
   );
 }
+
+type MainBannerProps = {
+  showDescription?: boolean;
+};
