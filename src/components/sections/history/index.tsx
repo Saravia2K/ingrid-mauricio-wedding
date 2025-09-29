@@ -18,23 +18,24 @@ export default function History({ history }: HistoryProps) {
     <div className={styles.history}>
       <div className={styles.title}>
         <span>
-          Nuestra <span className={styles["italic-dark-beige"]}>historia,</span>
+          Nuestra <span className={styles["italic-dark-beige"]}>historia,</span>{" "}
+          contada
         </span>
-        <Image priority src={flowers} alt="" className={styles.flowers} />
       </div>
       <div className={clsx(styles.title, styles["second-line"])}>
-        {Array.from({ length: isTablet ? 2 : 1 }, (_, i) => (
-          <Image
-            key={i}
-            src={mossGreenStar}
-            alt=""
-            className={styles["moss-green-star"]}
-          />
-        ))}{" "}
+        <Image
+          src={mossGreenStar}
+          alt=""
+          className={styles["moss-green-star"]}
+        />
         <span>
-          contada con el{" "}
-          <span className={styles["italic-dark-beige"]}>corazón.</span>
-        </span>
+          con el <span className={styles["italic-dark-beige"]}>corazón.</span>
+        </span>{" "}
+        <Image
+          src={mossGreenStar}
+          alt=""
+          className={styles["moss-green-star"]}
+        />
       </div>
       <div className={styles["history-text-container"]}>
         <HistoryFlowerArrangement position="l" />

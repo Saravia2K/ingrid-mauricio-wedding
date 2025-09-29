@@ -13,10 +13,15 @@
   .title {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 1rem;
     font-family: "Swagume";
     font-size: 1.5rem;
     white-space: nowrap;
+
+    &.second-line {
+      margin-top: -10px;
+    }
 
     @include bp.xs {
       font-size: 1.35rem;
@@ -24,10 +29,7 @@
 
     @include bp.tablet {
       font-size: 3rem;
-
-      &.second-line {
-        margin-top: -10px;
-      }
+      gap: 2rem;
 
       .flowers {
         width: 225px;
