@@ -2,18 +2,14 @@
 
 import Image from "next/image";
 import clsx from "clsx";
-import useIsTablet from "@/hooks/useIsTablet";
 
 import HistoryFlowerArrangement from "./history-flower-arrangement";
 
 import styles from "./history.module.scss";
-import flowers from "@/assets/images/Flores.svg";
 import mossGreenStar from "@/assets/images/arrangements/Estrella_Verde_musgo.svg";
 import papel from "@/assets/images/arrangements/papel-318x56.svg";
 
 export default function History({ history }: HistoryProps) {
-  const isTablet = useIsTablet();
-
   return (
     <div className={styles.history}>
       <div className={styles.title}>
