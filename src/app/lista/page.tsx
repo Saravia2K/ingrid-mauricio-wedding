@@ -2,6 +2,8 @@ import prisma from "@/lib/prisma";
 import ListaPageClient from "./client";
 import { Guest } from "../api/types";
 
+export const dynamic = "force-dynamic";
+
 function buildGuestsWithCompanions(
   guests: Guest[]
 ): (Guest & { companions: Guest[] })[] {
