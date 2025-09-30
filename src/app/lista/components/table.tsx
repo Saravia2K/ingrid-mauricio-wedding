@@ -11,7 +11,7 @@ import { TableGuestsListItem } from "../client";
 import { Guest } from "@/types/guest";
 
 interface Column {
-  id: "name" | "companions" | "cellphone" | "relation" | "fiance";
+  id: "name" | "companions" | "cellphone" | "relation" | "fiance" | "confirmed";
   label: string;
   minWidth?: number;
   align?: "right";
@@ -43,6 +43,18 @@ const columns: readonly Column[] = [
     label: "Invitado de",
     minWidth: 100,
     align: "right",
+  },
+  {
+    id: "confirmed",
+    label: "Confirmado",
+    minWidth: 100,
+    align: "right",
+    format: (value: boolean | undefined) => {
+      if (value == undefined) return "Sin confirmar";
+      if (value == false) return "No asistirá";
+
+      return "Asistirá";
+    },
   },
 ];
 
