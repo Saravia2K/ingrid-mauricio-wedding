@@ -9,13 +9,21 @@ import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import { TableGuestsListItem } from "../client";
 import { Guest } from "@/types/guest";
+import { toast } from "sonner";
 
 interface Column {
-  id: "name" | "companions" | "cellphone" | "relation" | "fiance" | "confirmed";
+  id:
+    | "name"
+    | "companions"
+    | "cellphone"
+    | "relation"
+    | "fiance"
+    | "confirmed"
+    | "slug";
   label: string;
   minWidth?: number;
   align?: "right";
-  format?: (value: any) => string;
+  format?: (value: any) => any;
 }
 
 const columns: readonly Column[] = [
@@ -54,6 +62,31 @@ const columns: readonly Column[] = [
       if (value == false) return "No asistirá";
 
       return "Asistirá";
+    },
+  },
+  {
+    id: "slug",
+    label: "Invitación",
+    minWidth: 100,
+    align: "right",
+    format: (value: boolean | undefined) => {
+      const url = `https://${window.location.hostname}/invitacion/${value}`;
+      const copy = async () => {
+        await navigator.clipboard.writeText(url);
+        toast.success("Invitación copiada exitosamente");
+      };
+      return (
+        <span
+          onClick={copy}
+          style={{
+            color: "blue",
+            textDecoration: "underline",
+            cursor: "pointer",
+          }}
+        >
+          https://{window.location.hostname}/invitacion/{value}
+        </span>
+      );
     },
   },
 ];
