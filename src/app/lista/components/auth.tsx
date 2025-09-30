@@ -23,6 +23,7 @@ export default function Auth({ onAuthSuccess }: AuthProps) {
       return;
     }
 
+    sessionStorage.setItem("admin-logged-in", "1");
     onAuthSuccess();
   };
 
