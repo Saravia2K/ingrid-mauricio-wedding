@@ -22,7 +22,7 @@ const columns: readonly Column[] = [
   { id: "name", label: "Nombre", minWidth: 100 },
   {
     id: "companions",
-    label: "Invitados",
+    label: "Acompañantes",
     minWidth: 170,
     format: (guests: Guest[]) => guests.map((g) => g.name).join(", "),
   },
