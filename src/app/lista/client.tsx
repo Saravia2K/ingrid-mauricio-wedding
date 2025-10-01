@@ -19,7 +19,7 @@ export default function ListaPageClient({ guests }: ListaPageClientProps) {
 
   if (!authorized) return <Auth onAuthSuccess={() => setAuthorized(true)} />;
   return (
-    <Box p={5}>
+    <Box p={5} height="100%">
       <Table guests={guests} />
     </Box>
   );

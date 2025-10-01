@@ -107,8 +107,8 @@ export default function Table({ guests }: TableProps) {
   };
 
   return (
-    <Paper sx={{ width: "100%", overflow: "hidden" }}>
-      <TableContainer sx={{ maxHeight: 440 }}>
+    <Paper sx={{ width: "100%", height: "100%", overflow: "hidden" }}>
+      <TableContainer sx={{ height: "100%" }}>
         <MUITable stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
