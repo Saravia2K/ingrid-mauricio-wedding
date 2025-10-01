@@ -10,7 +10,7 @@ import TableRow from "@mui/material/TableRow";
 import { TableGuestsListItem } from "../client";
 import { Guest } from "@/types/guest";
 import { toast } from "sonner";
-import { TextField } from "@mui/material";
+import { Chip, TextField } from "@mui/material";
 
 interface Column {
   id:
@@ -59,10 +59,22 @@ const columns: readonly Column[] = [
     minWidth: 100,
     align: "right",
     format: (value: boolean | undefined) => {
-      if (value == undefined) return "Sin confirmar";
-      if (value == false) return "No asistirá";
+      let chipData = {
+        label: "Asistirá",
+        color: "success",
+      };
+      if (value == undefined)
+        chipData = {
+          label: "Sin confirmar",
+          color: "default",
+        };
+      if (value == false)
+        chipData = {
+          label: "No asistirá",
+          color: "error",
+        };
 
-      return "Asistirá";
+      return <Chip label={chipData.label} color={chipData.color as any} />;
     },
   },
   {
