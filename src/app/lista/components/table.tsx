@@ -10,6 +10,7 @@ import TableRow from "@mui/material/TableRow";
 import { TableGuestsListItem } from "../client";
 import { Guest } from "@/types/guest";
 import { toast } from "sonner";
+import { TextField } from "@mui/material";
 
 interface Column {
   id:
@@ -94,6 +95,12 @@ const columns: readonly Column[] = [
 export default function Table({ guests }: TableProps) {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [search, setSearch] = React.useState("");
+  const currentGuests = React.useMemo(() => {
+    if (!search) return guests;
+
+    return guests.filter((g) => g.name.indexOf(search) > -1);
+  }, [search]);
 
   const handleChangePage = (event: unknown, newPage: number) => {
     setPage(newPage);
@@ -108,6 +115,12 @@ export default function Table({ guests }: TableProps) {
 
   return (
     <Paper sx={{ width: "100%", height: "100%", overflow: "hidden" }}>
+      <TextField
+        placeholder="Busca por nombre"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        sx={{ width: "50%" }}
+      />
       <TableContainer sx={{ height: "100%" }}>
         <MUITable stickyHeader aria-label="sticky table">
           <TableHead>
@@ -124,7 +137,7 @@ export default function Table({ guests }: TableProps) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {guests
+            {currentGuests
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row, i) => {
                 return (
