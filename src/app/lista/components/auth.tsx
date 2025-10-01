@@ -57,6 +57,11 @@ export default function Auth({ onAuthSuccess }: AuthProps) {
           disabled={isLoading}
           error={isError}
           helperText={isError ? "Código inválido" : undefined}
+          slotProps={{
+            htmlInput: {
+              inputMode: "numeric",
+            },
+          }}
         />
         <Button
           disabled={state == "loading"}
