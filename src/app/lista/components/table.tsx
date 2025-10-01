@@ -111,7 +111,9 @@ export default function Table({ guests }: TableProps) {
   const currentGuests = React.useMemo(() => {
     if (!search) return guests;
 
-    return guests.filter((g) => g.name.indexOf(search) > -1);
+    return guests.filter(
+      (g) => g.name.toLowerCase().indexOf(search.toLowerCase()) > -1
+    );
   }, [search]);
 
   const handleChangePage = (event: unknown, newPage: number) => {
